@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Terminal by sheen</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="matrix-overlay">
+        <canvas id="canv"></canvas>
+    </div>
+    <div class="terminal-window" id="terminal-window">
+        <div class="terminal-header" id="terminal-header">Hacking Terminal</div>
+        <div id="output" class="terminal-output"></div>
+        <div class="input-container">
+            <span class="prompt" id="prompt">user@sheen:~$</span>
+            <input type="text" id="commandInput" autofocus>
+        </div>
+    </div>
+</body>
+</html>

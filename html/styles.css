@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+#matrix-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#matrix-overlay.fade-out {
+    opacity: 0;
+}
+
+.terminal-window {
+    width: 80%;
+    height: 80%;
+    background-color: #000000;
+    border: 2px solid #00ff00;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    resize: both;
+    overflow: auto;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 2s;
+    position: absolute;
+}
+
+.terminal-window.fade-in {
+    opacity: 1;
+}
+
+.terminal-window.fade-out {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.terminal-header {
+    cursor: move;
+    background-color: #1e1e1e;
+    color: #00ff00;
+    padding: 5px;
+    text-align: center;
+}
+
+.terminal-output {
+    flex-grow: 1;
+    overflow: auto;
+    padding: 10px;
+    background-color: #000000;
+    color: #00ff00;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.terminal-output::-webkit-scrollbar,
+.terminal-window::-webkit-scrollbar {
+    width: 10px;
+    height: 10px; 
+}
+.terminal-output::-webkit-scrollbar-track,
+.terminal-window::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+.terminal-output::-webkit-scrollbar-thumb,
+.terminal-window::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-radius: 5px;
+}
+.terminal-output::-webkit-scrollbar-thumb:hover,
+.terminal-window::-webkit-scrollbar-thumb:hover {
+    background: #00cc00;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    border-top: 2px solid #00ff00;
+    position: relative;
+}
+
+#commandInput {
+    flex-grow: 1;
+    background-color: #000000;
+    color: #00ff00;
+    border: none;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
