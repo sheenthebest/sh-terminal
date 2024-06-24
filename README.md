@@ -19,4 +19,8 @@ This project is a simulated hacking terminal interface for FiveM. It features a 
 - **pwgen**: Generates a random password.
 - **base64**: Encodes or decodes a string in Base64. Usage: `base64 encode <text>`, `base64 decode <text>`
 - **time**: Displays the current time.
-- **testcb**: Sends a test callback to the server. Usage: `testcb <any>`
+- **testcb**: Sends a test callback to the client. Usage: `testcb <any>`
+
+### Prerequisites
+- A working FiveM server.
+- Basic knowledge of Lua, HTML, CSS, and JavaScript.
