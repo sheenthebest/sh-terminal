@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hacking Terminal by sheen</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="config.js"></script>
-    <script src="script.js"></script>
 </head>
 <body>
-    <div id="matrix-overlay">
-        <canvas id="canv"></canvas>
+    <div id="app">
+        <!-- Matrix Overlay -->
+        <transition name="matrix-fade">
+            <div v-if="showMatrix" class="matrix-overlay">
+                <canvas id="matrix-canvas"></canvas>
+            </div>
+        </transition>
+
+        <!-- Terminal Window -->
+        <transition name="terminal-fade">
+            <div v-if="isVisible" class="terminal-window">
+                <div class="terminal-header" @mousedown="startDrag">
+                    Hacking Terminal
+                </div>
+                <div class="terminal-output">
+                    <div v-for="(line, index) in output" :key="index" class="output-line">
+                        {{ line }}
+                    </div>
+                </div>
+                <div class="input-container">
+                    <span class="prompt">user@sheen:~$</span>
+                    <input 
+                        type="text" 
+                        v-model="commandInput"
+                        @keydown="handleKeydown"
+                        class="command-input"
+                        autofocus>
+                </div>
+            </div>
+        </transition>
     </div>
-    <div class="terminal-window" id="terminal-window">
-        <div class="terminal-header" id="terminal-header">Hacking Terminal</div>
-        <div id="output" class="terminal-output"></div>
-        <div class="input-container">
-            <span class="prompt" id="prompt">user@sheen:~$</span>
-            <input type="text" id="commandInput" autofocus>
-        </div>
-    </div>
+
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.prod.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
