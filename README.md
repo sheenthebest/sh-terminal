@@ -4,6 +4,9 @@ This project is a simulated hacking terminal interface for FiveM. It features a 
 
 **Note: This script is primarily intended for developers and is not a complete script.**
 
+## Showcase
+![Screenshot](https://forum-cfx-re.akamaized.net/original/5X/b/5/a/9/b5a97338a425231a10634c7ba902d0d0da7bd3fd.jpeg?raw=true)
+
 ## Commands
 - **help**: Displays a list of available commands.
 - **clear**: Clears the terminal screen.
